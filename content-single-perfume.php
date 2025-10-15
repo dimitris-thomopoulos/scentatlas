@@ -141,3 +141,66 @@ defined( 'ABSPATH' ) || exit;
 </div>
 </main>
 </div>
+
+<?php
+// Build JSON-LD structured data
+$jsonld = [
+    "@context" => "https://schema.org",
+    "@type" => "Product",
+    "name" => $name,
+    "image" => $image ? $image->getUri() : null,
+    "description" => $desc ? $desc->getValue() : null,
+    "fragranceFamily" => $fragranceFamily ? $fragranceFamily->getValue() : null,
+    "aggregateRating" => [
+        "@type" => "AggregateRating",
+        "bestRating" => "5",
+        "ratingCount" => "1",
+        "ratingValue" => "5"
+    ],
+    "additionalProperty" => []
+];
+
+// Add extra details as structured properties
+if ($concentration) {
+    $jsonld["additionalProperty"][] = [
+        "@type" => "PropertyValue",
+        "name" => "Concentration",
+        "value" => $concentration->getValue()
+    ];
+}
+if ($year) {
+    $jsonld["additionalProperty"][] = [
+        "@type" => "PropertyValue",
+        "name" => "Year",
+        "value" => $year->getValue()
+    ];
+}
+
+// Notes grouped by type
+if (!empty($topNotes)) {
+    $jsonld["additionalProperty"][] = [
+        "@type" => "PropertyValue",
+        "name" => "Top Notes",
+        "value" => array_map('cleanVar', $topNotes)
+    ];
+}
+if (!empty($middleNotes)) {
+    $jsonld["additionalProperty"][] = [
+        "@type" => "PropertyValue",
+        "name" => "Middle Notes",
+        "value" => array_map('cleanVar', $middleNotes)
+    ];
+}
+if (!empty($baseNotes)) {
+    $jsonld["additionalProperty"][] = [
+        "@type" => "PropertyValue",
+        "name" => "Base Notes",
+        "value" => array_map('cleanVar', $baseNotes)
+    ];
+}
+
+// Output JSON-LD script
+echo '<script type="application/ld+json">' . 
+     wp_json_encode($jsonld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . 
+     '</script>';
+?>
