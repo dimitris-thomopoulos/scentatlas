@@ -1,0 +1,41 @@
+{
+    "packages": [
+        {
+            "name": "easyrdf/easyrdf",
+            "version": "0.8.1",
+            "version_normalized": "0.8.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/easyrdf/easyrdf.git",
+                "reference": "2f371b9447b7627e23b82cd31ade029659bb438c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/easyrdf/easyrdf/zipball/2f371b9447b7627e23b82cd31ade029659bb438c",
+                "reference": "2f371b9447b7627e23b82cd31ade029659bb438c",
+                "shasum": ""
+            },
+            "time": "2014-01-29T22:43:55+00:00",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "EasyRdf_": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "description": "EasyRdf Lite is a customized version of EasyRdf",
+            "homepage": "https://github.com/Wikidata/easyrdf_lite",
+            "support": {
+                "issues": "https://github.com/easyrdf/easyrdf/issues",
+                "source": "https://github.com/easyrdf/easyrdf/tree/0.8.1"
+            },
+            "install-path": "../easyrdf/easyrdf"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
