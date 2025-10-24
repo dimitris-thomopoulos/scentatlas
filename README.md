@@ -110,3 +110,27 @@ Each individual perfume page provides comprehensive information and interactive 
 ScentAtlas combines a traditional WordPress front-end with advanced data-driven features to create a rich user experience for perfume enthusiasts. It provides an informative and interactive "atlas" of scents, where users can filter perfumes by notes or other attributes, visualize the geographic origin of fragrance ingredients, and get recommendations for similar scents.
 
 Through its well-integrated use of WordPress (for content management), custom code (for interactivity and logic), and semantic data (for knowledge representation and recommendations), ScentAtlas demonstrates a powerful and flexible architecture. By blending a CMS with custom APIs, data visualization, and semantic reasoning, the platform showcases how web technologies can be orchestrated to deliver a comprehensive and engaging tool for exploring perfumes.
+
+## Ontology Visualization Examples
+Below we present some ontology visualization examples:
+
+ ![Instance of Country class (country:Country)](/images/country_example.png)
+ *Instance of Country class (country:Country)*
+  ‎ 
+  ‎ 
+
+ ![Instance of Note class (note:NameOfNote)](/images/note_example_2.png)
+ *Instance of Note class (note:NameOfNote)*
+  ‎ 
+  ‎ 
+  ‎ 
+
+
+ ![Instance of Perfume class (perfume:NameOfPerfume)](/images/perfume_example_2.png)
+ *Instance of Perfume class (perfume:NameOfPerfume)*
+  ‎ 
+  ‎ 
+  ‎ 
+
+![Combination of Perfume, Note, Country classes](/images/full_example.png)
+ *Combination of Perfume, Note, Country classes*
